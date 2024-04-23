@@ -13,6 +13,7 @@ public class Strip {
     }
 
     public String match(String fieldName) {
+        System.out.println("thread_id" + Thread.currentThread().hashCode());
 
         String value = (String) map.get(fieldName);
         value = StringUtils.strip(value);

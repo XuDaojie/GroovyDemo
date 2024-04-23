@@ -1,3 +1,3 @@
 package org.example
 
-println("Hello world! Groovy")
+println("Hello world! Pipeline")

@@ -23,7 +23,17 @@ public class Application {
         try {
             testGroovy1();
             testGroovy2();
-            System.out.println("Groovy script executed successfully");
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        testGroovy2();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }).start();
+            System.out.println("Pipeline script executed successfully");
         } catch (Exception error){
             error.printStackTrace();
         }

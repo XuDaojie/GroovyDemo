@@ -21,8 +21,10 @@ public class Date {
             java.util.Date date1 = DateUtils.parseDate(value, pattern);
             map.put(fieldName, date1);
             return date1;
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+//            throw new RuntimeException(e);
         }
+        return null;
     }
 }
